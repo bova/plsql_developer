@@ -4,4 +4,4 @@ select 'Undo change vector size(Mb): ' ||
  where St.Sid = Ss.Sid
    and St.Statistic# = Sn.Statistic#
    and Sn.Name = 'undo change vector size'
-   and Ss.Sid = 16242
+   and Ss.Sid =  :sid

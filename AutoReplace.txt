@@ -1,5 +1,5 @@
 sf = select * from
 sc = select count(*) from
 wh = where
-or = order by
-gr = group by
+ob = order by
+gb = group by
