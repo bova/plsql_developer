@@ -1,5 +1,7 @@
-select :Event || '(' || :Seq# || ') ' || :Client_Info Sql_Text
+select :Event || '(' || :Seq# || ') ' --|| :Client_Info Sql_Text
   from Dual
+union all
+select  'Client Info: ' || :Client_Info Sql_Text from dual
 union all
 select Lower(a.Owner || '.' || a.Object_Name ||
              Decode(a.Subobject_Name,
