@@ -1,3 +1,5 @@
+select 'SQL_ID:' || :sql_id from dual
+union all
 select :Event || '(' || :Seq# || ') ' --|| :Client_Info Sql_Text
   from Dual
 union all
