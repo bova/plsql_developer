@@ -16,14 +16,16 @@ union all
 select *
   from (select a.Message || '    Elapsed (sec):' || a.Elapsed_Seconds ||
                '   Remaining(sec):' || a.Time_Remaining
-          from V$session_Longops a
+          from GV$session_Longops a
          where a.Sid = :Sid
            and a.Serial# = :Serial#
+           and a.inst_id = :inst_id
          order by Last_Update_Time desc)
  where Rownum = 1
 union all
 select *
   from (select Sql_Text
-          from V$sqltext_With_Newlines
+          from GV$sqltext_With_Newlines
          where Sql_Id = :Sql_Id
+         and inst_id = :inst_id
          order by Piece)
