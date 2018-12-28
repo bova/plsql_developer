@@ -1,4 +1,4 @@
 select p.Tracefile
-  from V$session s, V$process p
+  from gV$session s, gV$process p
  where s.Sid = :Sid
    and p.Addr = s.Paddr
